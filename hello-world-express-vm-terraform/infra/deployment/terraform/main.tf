@@ -27,9 +27,26 @@ module "iam" {
   source = "./modules/iam"
 }
 
+module "network" {
+  source = "./modules/network"
+
+  untrust_subnets = var.untrust_subnets
+}
+
 module "app" {
   source = "./modules/app"
 
-  region       = var.region
-  app_sa_email = module.iam.app_sa_email
+  app_name             = var.app_name
+  region               = var.region
+  app_sa_email         = module.iam.app_sa_email
+  untrust_network_name = module.network.untrust_network_name
+  untrust_subnets      = module.network.untrust_subnets
+  app_mig_configs      = var.app_mig_configs
+}
+
+module "global_http_load_balancer" {
+  source = "./modules/global_http_load_balancer"
+
+  company_name = var.company_name
+  environment  = var.environment
 }

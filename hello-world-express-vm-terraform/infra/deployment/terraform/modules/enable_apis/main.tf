@@ -4,6 +4,7 @@ locals {
     "cloudasset.googleapis.com",
     "cloudbuild.googleapis.com",
     "compute.googleapis.com",
+    "networkmanagement.googleapis.com",
     "secretmanager.googleapis.com",
   ]
 }

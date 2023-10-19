@@ -10,6 +10,13 @@ resource "google_artifact_registry_repository" "app" {
   format        = "DOCKER"
 }
 
+resource "google_artifact_registry_repository_iam_member" "app_sa" {
+  location   = google_artifact_registry_repository.app.location
+  repository = google_artifact_registry_repository.app.name
+  role       = "roles/artifactregistry.reader"
+  member     = "serviceAccount:${var.app_sa_email}"
+}
+
 resource "docker_image" "app" {
   name = local.app_image
   build {

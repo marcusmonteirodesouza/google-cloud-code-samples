@@ -1,5 +1,6 @@
 locals {
   app_sa_roles = [
+    "roles/logging.logWriter"
   ]
 }
 
