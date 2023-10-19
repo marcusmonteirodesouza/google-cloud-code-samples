@@ -1,6 +1,8 @@
-import {app} from './app';
+import {createApp} from './app';
 import {config} from './config';
 
-app.listen(config.port, () => {
-  console.log(`Hello, World! app listening on port ${config.port}...`);
+createApp().then(({app, logger}) => {
+  app.listen(config.port, () => {
+    logger.info(`Hello, World! app listening on port ${config.port}...`);
+  });
 });
