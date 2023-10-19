@@ -14,8 +14,7 @@ async function createApp() {
 
   app.use(mw);
 
-  app.get('/', (req, res) => {
-    req.log.info(req, 'Request received');
+  app.get('/', (_req, res) => {
     return res.json({message: 'Hello, World!'});
   });
 

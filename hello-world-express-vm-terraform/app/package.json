@@ -21,6 +21,8 @@
     "compile": "tsc",
     "fix": "gts fix",
     "start": "ts-node-dev -r dotenv/config src/index.ts",
+    "up": "docker compose up",
+    "up:build": "docker compose up --build",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
     "posttest": "npm run lint"
