@@ -10,7 +10,7 @@ module "app_gce_container" {
   version = "~> 2.0"
 
   container = {
-    image = "${docker_registry_image.app.name}:${docker_registry_image.app.sha256_digest}"
+    image = "${docker_registry_image.app.name}@${docker_registry_image.app.sha256_digest}"
     env = [
       {
         name  = "GCLOUD_PROJECT_ID"
@@ -68,7 +68,7 @@ module "app_migs" {
   version           = "~> 7.3"
   instance_template = module.app_instance_templates[each.key].self_link
   region            = each.key
-  hostname          = var.app_name
+  hostname          = "${var.app_name}-${each.key}"
 
   autoscaling_enabled = true
 

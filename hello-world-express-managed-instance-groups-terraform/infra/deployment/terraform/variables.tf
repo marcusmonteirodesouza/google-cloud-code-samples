@@ -30,6 +30,11 @@ variable "untrust_subnets" {
       subnet_region = "northamerica-northeast1"
       subnet_ip     = "10.162.0.0/20"
     }
+    northamerica-northeast2 = {
+      subnet_name   = "gcloudsamples-dev-untrust-na-ne2-subnet"
+      subnet_region = "northamerica-northeast2"
+      subnet_ip     = "10.188.0.0/20"
+    }
   }
   description = "A map of the untrusted VPC network subnets. Each key corresponds to a Google Cloud region."
 }
@@ -37,6 +42,9 @@ variable "untrust_subnets" {
 variable "app_mig_configs" {
   default = {
     northamerica-northeast1 = {
+      machine_type = "e2-standard-2"
+    }
+    northamerica-northeast2 = {
       machine_type = "e2-standard-2"
     }
   }
