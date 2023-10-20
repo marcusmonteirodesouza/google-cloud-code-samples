@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  app:
+    build: .
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      - GCLOUD_PROJECT_ID=${GCLOUD_PROJECT_ID}
+      - GCLOUD_SERVICE_ID=${GCLOUD_SERVICE_ID}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - NODE_ENV=${NODE_ENV}
+      - PORT=${PORT}
