@@ -10,7 +10,7 @@ module "app_gce_container" {
   version = "~> 2.0"
 
   container = {
-    image = docker_registry_image.app.name
+    image = "${docker_registry_image.app.name}:${docker_registry_image.app.sha256_digest}"
     env = [
       {
         name  = "GCLOUD_PROJECT_ID"

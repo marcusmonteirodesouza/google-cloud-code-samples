@@ -8,9 +8,9 @@ variable "environment" {
   description = "The system's environment."
 }
 
-variable "ip_address" {
+variable "external_ip" {
   type        = string
-  description = "The Global HTTP Load Balancer IP address."
+  description = "The Global HTTP Load Balancer external IP address."
 }
 
 variable "untrust_network_name" {

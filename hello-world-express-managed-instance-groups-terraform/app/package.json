@@ -1,7 +1,7 @@
 {
-  "name": "google-cloud-sample-hello-world-express-vm-terraform",
+  "name": "hello-world",
   "version": "1.0.0",
-  "description": "A 'Hello, World!' Express application served from a Virtual Machine instance.",
+  "description": "A 'Hello, World!' Express application.",
   "private": true,
   "author": {
     "name": "Marcus Vinicius Monteiro de Souza",
