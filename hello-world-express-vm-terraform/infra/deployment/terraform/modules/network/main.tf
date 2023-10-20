@@ -14,7 +14,10 @@ module "untrust_network" {
     {
       name     = "allow-egress-all"
       priority = 65535
-      ranges = [
+      source_ranges = [
+        "0.0.0.0/0"
+      ]
+      destination_ranges = [
         "0.0.0.0/0"
       ]
       allow = [
@@ -30,7 +33,7 @@ module "untrust_network" {
     {
       name     = "allow-health-check"
       priority = 65533
-      ranges = [
+      source_ranges = [
         "130.211.0.0/22",
         "35.191.0.0/16"
       ]
@@ -48,7 +51,7 @@ module "untrust_network" {
     {
       name     = "allow-ingress-from-iap"
       priority = 65534
-      ranges = [
+      source_ranges = [
         "35.235.240.0/20"
       ]
       allow = [
@@ -64,7 +67,7 @@ module "untrust_network" {
     {
       name     = "deny-ingress-all"
       priority = 65535
-      ranges = [
+      source_ranges = [
         "0.0.0.0/0"
       ]
       deny = [
