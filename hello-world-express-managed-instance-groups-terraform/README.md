@@ -6,6 +6,8 @@ Provisioned with [terraform](https://www.terraform.io/).
 
 ## Architecture
 
+![architecture diagram](./architecture-diagram.svg)
+
 ## Deployment
 
 1. [Install terraform](https://developer.hashicorp.com/terraform/downloads).
